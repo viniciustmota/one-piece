@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&family=Secular+One&display=swap");
+
+:root {
+  --fonte-principal: "Rubik", sans-serif;
+  --fonte-secundaria: "Secular One", sans-serif;
+}
+
+body {
+  font-family: var(--fonte-principal);
+}
