@@ -1,10 +1,105 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Rubik&family=Secular+One&display=swap");
+@import url(responsivel.css);
 
 :root {
   --fonte-principal: "Rubik", sans-serif;
   --fonte-secundaria: "Secular One", sans-serif;
+  --cor-principal: #000000;
+  --cor-secundaria: #fff;
+  --degrade: linear-gradient(-223deg, #000 40%, rgba(0, 0, 0, 0) 65%) no-repeat;
+  --sombra: #d9d9d9;
 }
 
 body {
   font-family: var(--fonte-principal);
+  background: var(--cor-principal);
+  color: var(--cor-secundaria);
+  overflow: hidden;
+}
+
+main::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  width: 80vw;
+  background: var(--degrade);
+}
+
+.personagem {
+  display: none;
+  height: 100vh;
+}
+
+.personagem.selecionado {
+  display: block;
+}
+
+.personagem .imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.conteudo {
+  position: absolute;
+  top: 0;
+  left: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  max-width: 380px;
+  z-index: 1;
+}
+
+.conteudo .nome-personagem {
+  font-size: 48px;
+  font-family: var(--fonte-secundaria);
+  margin-bottom: 20px;
+}
+
+.conteudo .descricao {
+  line-height: 24px;
+}
+
+.conteudo .logo {
+  background-image: url("../img/one-piece-logo.png");
+  background-size: cover;
+  height: 100px;
+  width: 230px;
+  margin-bottom: 35px;
+}
+
+.botoes {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-height: 100vh;
+  width: 180px;
+}
+
+.botoes .botao{
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 0;
+}
+
+.botao img{
+  border-radius: 50%;
+}
+
+.botao.selecionado{
+  transform: scale(1.2);
+  box-shadow: 0 0 10px var(--sombra);
 }
